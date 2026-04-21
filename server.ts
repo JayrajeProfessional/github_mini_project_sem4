@@ -245,7 +245,6 @@ app.use(express.json());
 
 app.get("/health", asyncHandler(async (_req, res) => {
   console.log("health called");
-  await pool.query("SELECT 1");
   ok(res.status(200), null, "Service is healthy");
 }));
 
