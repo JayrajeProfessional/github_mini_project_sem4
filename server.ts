@@ -11,7 +11,7 @@ import cors from "cors";
 // ENV VALIDATION
 // ─────────────────────────────────────────────────────────────────────────────
 
-const PORT = process.env.PORT ?? "5000";
+
 const DATABASE_URL = process.env.DATABASE_URL;
 const CORS_ORIGIN = process.env.CORS_ORIGIN ?? "*";
 const NODE_ENV = process.env.NODE_ENV ?? "development";
