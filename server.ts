@@ -11,7 +11,7 @@ import cors from "cors";
 // ENV VALIDATION
 // ─────────────────────────────────────────────────────────────────────────────
 
-const PORT = process.env.PORT || "5000";
+const PORT = process.env.PORT ?? "5000";
 const DATABASE_URL = process.env.DATABASE_URL;
 const CORS_ORIGIN = process.env.CORS_ORIGIN ?? "*";
 const NODE_ENV = process.env.NODE_ENV ?? "development";
@@ -245,7 +245,7 @@ app.use(express.json());
 
 app.get("/health", asyncHandler(async (_req, res) => {
   await pool.query("SELECT 1");
-  ok(res, null, "Service is healthy");
+  ok(res.status(200), null, "Service is healthy");
 }));
 
 // ─────────────────────────────────────────────────────────────────────────────
